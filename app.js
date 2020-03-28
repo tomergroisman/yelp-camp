@@ -26,11 +26,15 @@ app.use(express.static(__dirname + "/public"));
 // Set body-parser
 app.use(bodyParser.urlencoded({extended: true}));
 // Connect mongoose
+// Localy
+// mongoose.connect("mongodb://tomer:tomer@localhost:27017/yelp_camp?authSource=admin",
+// Deployed
 mongoose.connect("mongodb+srv://tomer:tomer@cluster0-y0lpw.mongodb.net/test?retryWrites=true&w=majority",
 				 {
-					useNewUrlParser: true,
+					useNewUrlParser:	true,
+					useCreateIndex:		true,
 					useUnifiedTopology: true,
-					useFindAndModify: false
+					useFindAndModify:	false
 				});
 // Set flash
 app.use(flash());
