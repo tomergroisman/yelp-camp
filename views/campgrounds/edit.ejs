@@ -3,7 +3,7 @@
 	<div class="container">
 		<h1 style="text-align: center;">Edit <%= campground.name %></h1>
 		
-		<form class="edit-new-form" action="/campgrounds/<%= campground._id %>?_method=PUT" method="POST">
+		<form class="edit-new-form w-50" action="/campgrounds/<%= campground._id %>?_method=PUT" method="POST">
 			<div class="input-group mb-3">
 				<input class="form-control" type="text" value="<%= campground.name %>" name="campground[name]" required>
 			</div>
@@ -11,7 +11,7 @@
 				<input class="form-control" type="text" value="<%= campground.image %>" name="campground[image]" required>
 			</div>
 			<div class="input-group mb-3">
-				<input class="form-control" type="text" value="<%= campground.description %>" name="campground[description]" required>
+				<textarea class="form-control" type="text" rows="3" value="<%= campground.description %>" name="campground[description]" required></textarea>
 			</div>
 			<div class="input-group mb-3">
 				<input class="form-control mr-2" type="number" min=0 max=1000 value="<%= campground.price %>" name="campground[price]"><span id="per-night">$ /Night</span>

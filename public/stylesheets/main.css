@@ -39,3 +39,20 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
+
+.list-group-item:hover {
+    cursor: pointer;
+}
+
+.list-group-item:hover:not(.active) {
+    background: rgba(150, 150, 150, 0.1);
+}
+
+#side-menu * {
+    display: none;
+    transition: display 0.6s;
+}
+
+textarea {
+    resize: none;
+}
