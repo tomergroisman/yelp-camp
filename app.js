@@ -26,7 +26,8 @@ app.use(express.static(__dirname + "/public"));
 // Set body-parser
 app.use(bodyParser.urlencoded({extended: true}));
 // Connect mongoose
-mongoose.connect("mongodb://tomer:tomer@localhost:27017/yelp_camp?authSource=admin",
+var host = "3.9.14.146";
+mongoose.connect("mongodb://tomer:tomer@" + host + ":27017/yelp_camp?authSource=admin",
 				 {
 					useNewUrlParser: true,
 					useUnifiedTopology: true,
