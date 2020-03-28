@@ -26,8 +26,7 @@ app.use(express.static(__dirname + "/public"));
 // Set body-parser
 app.use(bodyParser.urlencoded({extended: true}));
 // Connect mongoose
-var host = "3.9.14.146";
-mongoose.connect("mongodb://tomer:tomer@" + host + ":27017/yelp_camp?authSource=admin",
+mongoose.connect("mongodb+srv://tomergroisman:<password>@cluster0-y0lpw.mongodb.net/test?retryWrites=true&w=majority",
 				 {
 					useNewUrlParser: true,
 					useUnifiedTopology: true,
@@ -64,6 +63,6 @@ app.use("/campgrounds/:id/comments", commentsRoutes);
 app.use(indexRoutes);
 
 // Server listening
-app.listen(process.env.PORT, process.env.IP, function(){
+app.listen(8080, function(){
 	console.log("YelpCamp Server is Running");
 });
