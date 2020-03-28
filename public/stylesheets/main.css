@@ -1,0 +1,41 @@
+#campground-author {
+    font-size: 0.9rem;
+}
+
+#campground-author span {
+    font-weight: 600;
+}
+
+.edit-new-form {
+    width: 30%;
+    margin: 30px auto;
+}
+
+#comments {
+    padding-bottom: 0.5rem !important;
+}
+
+#delete-comment {
+    display: inline;
+}
+
+#comment-time {
+    font-size: 0.9rem;
+    font-weight: 300;
+}
+
+#per-night {
+    padding-top: 5px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}

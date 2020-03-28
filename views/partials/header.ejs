@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>YelpCamp</title>
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+		<script src="https://kit.fontawesome.com/b618a67d87.js"></script>
+		<link rel="stylesheet" href="/stylesheets/main.css">
+	</head>
+	<body>
+		<!-- Nav-Bar -->
+		<nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="/">YelpCamp</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item">
+							<a class="nav-link" href="/">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/campgrounds">Campsites</a>
+						</li>
+					</ul>
+					<ul class="navbar-nav ml-auto">
+						<% if (!currentUser){ %> 
+							<li class="nav-item">
+								<a class="nav-link" href="/register">Sign Up</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="/login">Login</a>
+							</li>
+						<% } else { %>
+							<li class="navbar-text px-2">Sign in as: <strong><%= currentUser.username %></strong></li>
+							<li class="nav-item">
+								<a class="nav-link" href="/logout">Logout</a>
+							</li>
+						<% } %>	
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<!-- FLash messege -->
+		<div class="container">
+		<% if (message.error.length > 0) { %>
+			<div class="alert alert-danger" role="alert">
+				<%= message.error %>
+			</div>
+		<% } if (message.success.length > 0) { %>
+			<div class="alert alert-success" role="alert">
+				<%= message.success %>
+			</div>
+		<% } if (message.info.length > 0) { %>
+			<div class="alert alert-warning" role="alert">
+				<%= message.info %>
+			</div>
+		<% } %>
+		</div>
