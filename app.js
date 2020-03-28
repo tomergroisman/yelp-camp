@@ -26,7 +26,7 @@ app.use(express.static(__dirname + "/public"));
 // Set body-parser
 app.use(bodyParser.urlencoded({extended: true}));
 // Connect mongoose
-mongoose.connect("mongodb+srv://tomergroisman:<password>@cluster0-y0lpw.mongodb.net/test?retryWrites=true&w=majority",
+mongoose.connect("mongodb+srv://tomer:tomer@cluster0-y0lpw.mongodb.net/test?retryWrites=true&w=majority",
 				 {
 					useNewUrlParser: true,
 					useUnifiedTopology: true,
