@@ -16,7 +16,7 @@ var campgroundRoutes 		= require("./routes/campgrounds"),
 var	User					= require("./models/user")
 	seedDB					= require("./seed");
 
-
+const PORT = process.env.PORT || 8080;
 // Set up express
 var app	= express();
 // Set file extention default to .ejs
@@ -26,7 +26,7 @@ app.use(express.static(__dirname + "/public"));
 // Set body-parser
 app.use(bodyParser.urlencoded({extended: true}));
 // Connect mongoose
-mongoose.connect(process.env.DATABASEURL,
+mongoose.connect(process.env.DATABASE_URL,
 				 {
 					useNewUrlParser:	true,
 					useCreateIndex:		true,
@@ -64,6 +64,6 @@ app.use("/campgrounds/:id/comments", commentsRoutes);
 app.use(indexRoutes);
 
 // Server listening
-app.listen(process.env.PORT, process.env.IP, function(){
+app.listen(PORT, process.env.IP, function(){
 	console.log("YelpCamp Server is Running");
 });
